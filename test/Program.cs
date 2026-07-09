@@ -45,9 +45,11 @@ var app = builder.Build();
 //    app.UseSwaggerUI();
 //}
 
-app.UseCors("AllowAll");
-
 app.UseHttpsRedirection();
+
+app.UseRouting();
+
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
 
