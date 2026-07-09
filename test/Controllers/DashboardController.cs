@@ -1,4 +1,4 @@
-﻿using ClassLibrary1;
+using ClassLibrary1;
 using ClassLibrary1.model;
 using ClassLibrary1.Repo;
 using Microsoft.AspNetCore.Http;
@@ -20,7 +20,7 @@ namespace test.Controllers
         [HttpGet("Hello")]
         public string get()
         {
-            return "hello world";
+            return "hello world v2";
         }
 
         [HttpPost("AddBugstatus")]
