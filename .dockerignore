@@ -1,0 +1,12 @@
+**/*.user
+**/*.*proj.user
+**/bin/
+**/obj/
+.vs/
+.git/
+.github/
+.vscode/
+Dockerfile
+docker-compose*
+*.db
+*.local

@@ -1,0 +1,24 @@
+## Ignore Visual Studio files
+.vs/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+AppPackages/
+BundleArtifacts/
+[Tt]est[搁R]esult*/
+
+## User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+## Ignore local config/databases
+*.db
+*.local
+appsettings.Development.json
+appsettings.local.json
