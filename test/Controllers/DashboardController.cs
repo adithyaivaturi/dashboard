@@ -20,7 +20,7 @@ namespace test.Controllers
         [HttpGet("Hello")]
         public string get()
         {
-            return "hello world v2";
+            return "hello world";
         }
 
         [HttpPost("AddBugstatus")]
@@ -39,6 +39,14 @@ namespace test.Controllers
             {
                 return new Bugstatus();
             }
+            return result;
+        }
+
+        [HttpGet("GetAllBugstatus")]
+        public async Task<List<Bugstatus>> GetAllBugstatus()
+        {
+            Bugstatusrepo repo = new Bugstatusrepo(_context);
+            var result = await repo.GetAllBugstatus();
             return result;
         }
 

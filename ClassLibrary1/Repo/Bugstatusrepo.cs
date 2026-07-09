@@ -1,4 +1,5 @@
-﻿using ClassLibrary1.model;
+using ClassLibrary1.model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace ClassLibrary1.Repo
     {
         Task<string> Addstudent(Bugstatus bugstatus);
         Task<Bugstatus> Getstudent(int id);
+        Task<List<Bugstatus>> GetAllBugstatus();
     }
 
     public class Bugstatusrepo : IBugstatusrepo
@@ -37,6 +39,10 @@ namespace ClassLibrary1.Repo
         public async Task<Bugstatus> Getstudent(int id)
         {
             return await _context.Bugstatuses.FindAsync(id);
+        }
+        public async Task<List<Bugstatus>> GetAllBugstatus()
+        {
+            return await _context.Bugstatuses.ToListAsync();
         }
         public async Task<Bugstatus> UpdateBugstatus(Bugstatus bugstatus)
         {
