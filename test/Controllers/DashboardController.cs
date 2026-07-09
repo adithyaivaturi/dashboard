@@ -54,17 +54,14 @@ namespace test.Controllers
         public async Task<Bugstatus> updateBugstatus([FromBody] Bugstatus bugstatus)
         {
             List<String> error = isvalid(bugstatus);
-            var bugstatus1 = _context.Bugstatuses.FindAsync(bugstatus.Id);
-            Bugstatusrepo repo = new Bugstatusrepo(_context);
-            if (bugstatus1 != null && error.Count <= 0)
+            if (error.Count <= 0)
             {
-                Bugstatus bs = bugstatus1.Result;
-                bs.Bug = bugstatus.Bug;
-                bs.Description = bugstatus.Description;
-                bs.Status = bugstatus.Status;
-                bs.Priority = bugstatus.Priority;
-                await repo.UpdateBugstatus(bs);
-                return bs;
+                Bugstatusrepo repo = new Bugstatusrepo(_context);
+                var result = await repo.UpdateBugstatus(bugstatus);
+                if (result != null)
+                {
+                    return result;
+                }
             }
             return new Bugstatus();
         }
