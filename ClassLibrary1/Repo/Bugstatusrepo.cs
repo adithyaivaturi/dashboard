@@ -27,6 +27,8 @@ namespace ClassLibrary1.Repo
         {
             try
             {
+                bugstatus.CreatedAt = DateTime.UtcNow;
+                bugstatus.UpdatedAt = DateTime.UtcNow;
                 _context.Bugstatuses.Add(bugstatus);
                 await _context.SaveChangesAsync();
                 return "Bugstatus added successfully.";
@@ -53,7 +55,7 @@ namespace ClassLibrary1.Repo
                 existingBugstatus.Description = bugstatus.Description;
                 existingBugstatus.Status = bugstatus.Status;
                 existingBugstatus.Priority = bugstatus.Priority;
-                existingBugstatus.UpdatedAt = DateTime.Now;
+                existingBugstatus.UpdatedAt = DateTime.UtcNow;
                 await _context.SaveChangesAsync();
                 return existingBugstatus;
             }
